@@ -1,0 +1,9 @@
+C:\Users\zande\Code\C#\jectionpro-CLI\bin\Debug\netcoreapp3.1\jectionpro-CLI.deps.json
+C:\Users\zande\Code\C#\jectionpro-CLI\bin\Debug\netcoreapp3.1\jectionpro-CLI.dll
+C:\Users\zande\Code\C#\jectionpro-CLI\bin\Debug\netcoreapp3.1\jectionpro-CLI.pdb
+C:\Users\zande\Code\C#\jectionpro-CLI\obj\Debug\netcoreapp3.1\jectionpro-CLI.csproj.AssemblyReference.cache
+C:\Users\zande\Code\C#\jectionpro-CLI\obj\Debug\netcoreapp3.1\jectionpro-CLI.AssemblyInfoInputs.cache
+C:\Users\zande\Code\C#\jectionpro-CLI\obj\Debug\netcoreapp3.1\jectionpro-CLI.AssemblyInfo.cs
+C:\Users\zande\Code\C#\jectionpro-CLI\obj\Debug\netcoreapp3.1\jectionpro-CLI.csproj.CoreCompileInputs.cache
+C:\Users\zande\Code\C#\jectionpro-CLI\obj\Debug\netcoreapp3.1\jectionpro-CLI.dll
+C:\Users\zande\Code\C#\jectionpro-CLI\obj\Debug\netcoreapp3.1\jectionpro-CLI.pdb

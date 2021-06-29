@@ -1,0 +1,9 @@
+C:\Users\zande\Code\C#\jectionpro-CLI\Cmdlets\bin\Debug\netcoreapp3.1\Cmdlets.deps.json
+C:\Users\zande\Code\C#\jectionpro-CLI\Cmdlets\bin\Debug\netcoreapp3.1\Cmdlets.dll
+C:\Users\zande\Code\C#\jectionpro-CLI\Cmdlets\bin\Debug\netcoreapp3.1\Cmdlets.pdb
+C:\Users\zande\Code\C#\jectionpro-CLI\Cmdlets\obj\Debug\netcoreapp3.1\Cmdlets.csproj.AssemblyReference.cache
+C:\Users\zande\Code\C#\jectionpro-CLI\Cmdlets\obj\Debug\netcoreapp3.1\Cmdlets.AssemblyInfoInputs.cache
+C:\Users\zande\Code\C#\jectionpro-CLI\Cmdlets\obj\Debug\netcoreapp3.1\Cmdlets.AssemblyInfo.cs
+C:\Users\zande\Code\C#\jectionpro-CLI\Cmdlets\obj\Debug\netcoreapp3.1\Cmdlets.csproj.CoreCompileInputs.cache
+C:\Users\zande\Code\C#\jectionpro-CLI\Cmdlets\obj\Debug\netcoreapp3.1\Cmdlets.dll
+C:\Users\zande\Code\C#\jectionpro-CLI\Cmdlets\obj\Debug\netcoreapp3.1\Cmdlets.pdb
