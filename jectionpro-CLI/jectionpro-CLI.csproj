@@ -4,11 +4,76 @@
         <TargetFramework>netcoreapp3.1</TargetFramework>
         <RootNamespace>jectionpro_CLI</RootNamespace>
         <DockerDefaultTargetOS>Windows</DockerDefaultTargetOS>
+        <OutputType>Exe</OutputType>
+        <Product>jectionpro-CLI</Product>
+        <AssemblyName>jp</AssemblyName>
+    </PropertyGroup>
+
+    <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+      <OutputPath>C:\Users\zande\CommandLineInterfaces\jectionpro\bin</OutputPath>
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="McMaster.Extensions.CommandLineUtils" Version="4.0.0-beta.74" />
-      <PackageReference Include="System.Management.Automation" Version="6.2.7" />
+      <None Remove="HelpFiles\help.txt" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="System.CommandLine" Version="2.0.0-beta1.21216.1" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Content Include="HelpFiles\help.txt" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Update="ResourceFiles\HelpFileResources.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>HelpFileResources.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="ResourceFiles\ParsingErrorResources.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>ParsingErrorResources.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="ResourceFiles\ParsingSuccessResources.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>ParsingSuccessResources.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="ResourceFiles\OtherMessagesResources.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>OtherMessagesResources.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Update="ResourceFiles\HelpFileResources.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>HelpFileResources.resx</DependentUpon>
+      </Compile>
+      <Compile Update="ResourceFiles\ParsingErrorResources.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>ParsingErrorResources.resx</DependentUpon>
+      </Compile>
+      <Compile Update="ResourceFiles\ParsingSuccessResources.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>ParsingSuccessResources.resx</DependentUpon>
+      </Compile>
+      <Compile Update="InterfaceClasses\InitCommand-Project.cs">
+        <DependentUpon>ProjectCommand.cs</DependentUpon>
+      </Compile>
+      <Compile Update="InterfaceClasses\DisplayCommand-Project.cs">
+        <DependentUpon>ProjectCommand.cs</DependentUpon>
+      </Compile>
+      <Compile Update="ResourceFiles\OtherMessagesResources.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>OtherMessagesResources.resx</DependentUpon>
+      </Compile>
+      <Compile Update="InterfaceClasses\CreateCommand-List.cs">
+        <DependentUpon>ListCommand.cs</DependentUpon>
+      </Compile>
     </ItemGroup>
 
 </Project>
