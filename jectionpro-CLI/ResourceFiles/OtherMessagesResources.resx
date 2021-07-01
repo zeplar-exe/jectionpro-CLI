@@ -21,4 +21,16 @@
     <data name="ResultsOmitted" xml:space="preserve">
         <value>Some results may be omitted due to file access restrictions.</value>
     </data>
+    <data name="PinMoved" xml:space="preserve">
+        <value>Moved pin {0} to list {1}</value>
+    </data>
+    <data name="ListOpened" xml:space="preserve">
+        <value>Opened {0}</value>
+    </data>
+    <data name="ListClosed" xml:space="preserve">
+        <value>Closed list {0}</value>
+    </data>
+    <data name="OpenedPin" xml:space="preserve">
+        <value>Opened {0}</value>
+    </data>
 </root>

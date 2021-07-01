@@ -61,6 +61,42 @@ namespace jectionpro_CLI.ResourceFiles {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Closed list {0}.
+        /// </summary>
+        internal static string ListClosed {
+            get {
+                return ResourceManager.GetString("ListClosed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Opened {0}.
+        /// </summary>
+        internal static string ListOpened {
+            get {
+                return ResourceManager.GetString("ListOpened", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Opened {0}.
+        /// </summary>
+        internal static string OpenedPin {
+            get {
+                return ResourceManager.GetString("OpenedPin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Moved pin {0} to list {1}.
+        /// </summary>
+        internal static string PinMoved {
+            get {
+                return ResourceManager.GetString("PinMoved", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Some results may be omitted due to file access restrictions..
         /// </summary>
         internal static string ResultsOmitted {

@@ -13,6 +13,7 @@ namespace jectionpro_CLI.InterfaceClasses
 
             Add(ProjectCommand.GetCommand());
             Add(ListCommand.GetCommand());
+            Add(PinCommand.GetCommand());
         }
     }
 }

@@ -8,19 +8,23 @@ namespace jectionpro_CLI.Classes
     public class PinList : List<Pin>
     {
         public string Name;
-        public string Description;
-        public readonly Guid Id;
+        public int Id;
 
-        public PinList(string name, string description)
+        public PinList(string name)
         {
             Name = name;
-            Description = description;
-            Id = Guid.NewGuid();
         }
 
-        public void Remove(Guid id)
+        public new void Add(Pin item)
         {
-            Remove(GetPinByLink(id));
+            item.Id = Count;
+            item.Parent = this;
+            base.Add(item);
+        }
+
+        public void Remove(int id)
+        {
+            base.Remove(GetPinById(id));
         }
 
         public XElement ToXml()
@@ -28,12 +32,12 @@ namespace jectionpro_CLI.Classes
             var xml = new XElement("pinlist");
             var pins = new XElement("pins");
             
-            xml.Add("name", Name);
-            xml.Add("description", Description);
+            xml.Add(new XElement("name", Name));
+            xml.Add(new XElement("id", Id));
 
             foreach (var pin in this)
             {
-                pins.Add("pin", pin.ToXml());
+                pins.Add(pin.ToXml());
             }
             
             xml.Add(pins);
@@ -43,9 +47,10 @@ namespace jectionpro_CLI.Classes
 
         public static PinList FromXml(XElement xml)
         {
-            var list = new PinList(xml.Element("name")?.Value, xml.Element("description")?.Value);
+            var list = new PinList(xml.Element("name")?.Value);
+            list.Id = Convert.ToInt32(xml.Element("id")?.Value);
             
-            foreach (var pin in xml.Elements("pins"))
+            foreach (var pin in xml.Element("pins").Elements("pin"))
             {
                 list.Add(Pin.FromXml(pin));
             }
@@ -58,7 +63,7 @@ namespace jectionpro_CLI.Classes
             return this.Where(pin => pin.Name == name).ToList();
         }
 
-        public Pin GetPinByLink(Guid id)
+        public Pin GetPinById(int id)
         {
             return this.DefaultIfEmpty(null).First(pin => pin.Id == id);
         }

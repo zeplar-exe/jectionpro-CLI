@@ -8,26 +8,24 @@ namespace jectionpro_CLI.Classes
     {
         public string Name;
         public string Description;
-        public List<PinContent> Content;
-        public readonly Guid Id;
-
-        public string Text { get; private set; }
-
-        public Pin(string name, string text = "")
+        public string TextContent;
+        public int Id;
+        public PinList Parent;
+        
+        public Pin(string name, string description = "")
         {
             Name = name;
-            Text = text;
-            Id = Guid.NewGuid();
+            Description = description;
         }
 
         public XElement ToXml()
         {
             var xml = new XElement("pin");
 
-            xml.Add("name", Name);
-            xml.Add("description", Description);
-            
-            // TODO: Include pin content
+            xml.Add(new XElement("name", Name));
+            xml.Add(new XElement("description", Description));
+            xml.Add(new XElement("textcontent", TextContent));
+            xml.Add(new XElement("id", Id));
 
             return xml;
         }
@@ -35,20 +33,20 @@ namespace jectionpro_CLI.Classes
         public static Pin FromXml(XElement xml)
         {
             var pin = new Pin(xml.Element("name")?.Value, xml.Element("description")?.Value);
-
-            // TODO: Include pin content
+            pin.TextContent = xml.Element("textcontent")?.Value;
+            pin.Id = Convert.ToInt32(xml.Element("id")?.Value);
             
             return pin;
         }
 
         public void AppendText(string newText)
         {
-            Text += newText;
+            TextContent += newText;
         }
         
         public void OverwriteText(string newText)
         {
-            Text = newText;
+            TextContent = newText;
         }
     }
 }

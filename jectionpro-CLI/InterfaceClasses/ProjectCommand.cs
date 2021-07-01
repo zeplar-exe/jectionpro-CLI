@@ -17,7 +17,7 @@ namespace jectionpro_CLI.InterfaceClasses
         
         public static Command GetCommand()
         {
-            var command = new Command("project", "Used to create and manipulate projects.")
+            var command = new Command("project", "Create and manipulate projects.")
             {
                 InitCommand_Project.GetCommand(),
                 DisplayCommand_Project.GetCommand()
@@ -39,11 +39,18 @@ namespace jectionpro_CLI.InterfaceClasses
                 return null;
             }
 
-            var projectFilePath = Path.Join(path, ProjectDataFileName);
+            var projectPath = Path.Join(path, ProjectDirectoryName);
+            var projectFilePath = Path.Join(projectPath, ProjectDataFileName);
+
+            if (!Directory.Exists(projectPath))
+            {
+                Console.WriteLine(ParsingErrorResources.NoProjectFound);
+                return null;
+            }
 
             if (!File.Exists(projectFilePath))
             {
-                Console.WriteLine(ParsingErrorResources.MissingProjXML);
+                Console.WriteLine(ParsingErrorResources.MissingProjectXML);
                 return null;
             }
 
@@ -51,7 +58,7 @@ namespace jectionpro_CLI.InterfaceClasses
 
             if (xmlDoc.Root is null)
             {
-                Console.WriteLine(ParsingErrorResources.InvalidProjXML);
+                Console.WriteLine(ParsingErrorResources.InvalidProjectXML);
                 return null;
             }
             

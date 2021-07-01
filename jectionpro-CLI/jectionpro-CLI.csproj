@@ -74,6 +74,36 @@
       <Compile Update="InterfaceClasses\CreateCommand-List.cs">
         <DependentUpon>ListCommand.cs</DependentUpon>
       </Compile>
+      <Compile Update="InterfaceClasses\DisplayCommand-List.cs">
+        <DependentUpon>ListCommand.cs</DependentUpon>
+      </Compile>
+      <Compile Update="InterfaceClasses\CreateCommand-Pin.cs">
+        <DependentUpon>PinCommand.cs</DependentUpon>
+      </Compile>
+      <Compile Update="InterfaceClasses\OpenCommand-List.cs">
+        <DependentUpon>ListCommand.cs</DependentUpon>
+      </Compile>
+      <Compile Update="InterfaceClasses\CloseCommand-List.cs">
+        <DependentUpon>ListCommand.cs</DependentUpon>
+      </Compile>
+      <Compile Update="InterfaceClasses\DeleteCommand-List.cs">
+        <DependentUpon>ListCommand.cs</DependentUpon>
+      </Compile>
+      <Compile Update="InterfaceClasses\EditCommand-Pin.cs">
+        <DependentUpon>PinCommand.cs</DependentUpon>
+      </Compile>
+      <Compile Update="InterfaceClasses\MoveCommand-Pin.cs">
+        <DependentUpon>PinCommand.cs</DependentUpon>
+      </Compile>
+      <Compile Update="InterfaceClasses\DeleteCommand-Pin.cs">
+        <DependentUpon>PinCommand.cs</DependentUpon>
+      </Compile>
+      <Compile Update="InterfaceClasses\OpenCommand-Pin.cs">
+        <DependentUpon>PinCommand.cs</DependentUpon>
+      </Compile>
+      <Compile Update="InterfaceClasses\CloseCommand-Pin.cs">
+        <DependentUpon>PinCommand.cs</DependentUpon>
+      </Compile>
     </ItemGroup>
 
 </Project>

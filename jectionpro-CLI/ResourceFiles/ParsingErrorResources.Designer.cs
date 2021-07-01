@@ -70,11 +70,29 @@ namespace jectionpro_CLI.ResourceFiles {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Neither id or pinId are valid..
+        /// </summary>
+        internal static string DeleteCommandInvalidIds {
+            get {
+                return ResourceManager.GetString("DeleteCommandInvalidIds", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Name cannot be empty..
         /// </summary>
         internal static string EmptyName {
             get {
                 return ResourceManager.GetString("EmptyName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Expected an open {0}..
+        /// </summary>
+        internal static string ExpectedOpened {
+            get {
+                return ResourceManager.GetString("ExpectedOpened", resourceCulture);
             }
         }
         
@@ -88,20 +106,47 @@ namespace jectionpro_CLI.ResourceFiles {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to No list with the id {0} exists..
+        /// </summary>
+        internal static string InvalidListId {
+            get {
+                return ResourceManager.GetString("InvalidListId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No pin with the id {0} exists..
+        /// </summary>
+        internal static string InvalidPinId {
+            get {
+                return ResourceManager.GetString("InvalidPinId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The project you are trying to open does not have a valid proj.xml file..
         /// </summary>
-        internal static string InvalidProjXML {
+        internal static string InvalidProjectXML {
             get {
-                return ResourceManager.GetString("InvalidProjXML", resourceCulture);
+                return ResourceManager.GetString("InvalidProjectXML", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to The project you are trying to open does not have a proj.xml file..
         /// </summary>
-        internal static string MissingProjXML {
+        internal static string MissingProjectXML {
             get {
-                return ResourceManager.GetString("MissingProjXML", resourceCulture);
+                return ResourceManager.GetString("MissingProjectXML", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This directory does not contain a project..
+        /// </summary>
+        internal static string NoProjectFound {
+            get {
+                return ResourceManager.GetString("NoProjectFound", resourceCulture);
             }
         }
         
