@@ -20,7 +20,6 @@ namespace jectionpro_CLI.InterfaceClasses
             var command = new Command("project", "Create and manipulate projects.")
             {
                 InitCommand_Project.GetCommand(),
-                DisplayCommand_Project.GetCommand()
             };
 
             return command;
