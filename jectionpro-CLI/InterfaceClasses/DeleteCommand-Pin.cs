@@ -1,6 +1,7 @@
 using System;
 using System.CommandLine;
 using System.CommandLine.Invocation;
+using System.Linq;
 using jectionpro_CLI.Classes;
 using jectionpro_CLI.ResourceFiles;
 
@@ -19,6 +20,8 @@ namespace jectionpro_CLI.InterfaceClasses
         
         private static void Handler()
         {
+            var currentProject = ProjectCommand.GetCurrentProject();
+            
             if (ListCommand.OpenList == null)
             {
                 Console.WriteLine(ParsingErrorResources.ExpectedOpened, "list");
@@ -31,9 +34,10 @@ namespace jectionpro_CLI.InterfaceClasses
                 return;
             }
 
+            currentProject.GetPinListById(ListCommand.OpenList.Id)?.Remove(PinCommand.OpenPin.Id);
             ListCommand.OpenList.Remove(PinCommand.OpenPin);
-            ListCommand.OpenList = null;
-            Project.Save(ProjectCommand.GetCurrentProject().ToXml());
+            PinCommand.OpenPin = null;
+            Project.Save(currentProject.ToXml());
         }
     }
 }

@@ -16,7 +16,8 @@ namespace jectionpro_CLI.InterfaceClasses
                 EditCommand_Pin.GetCommand(),
                 OpenCommand_Pin.GetCommand(),
                 CloseCommand_Pin.GetCommand(),
-                MoveCommand_Pin.GetCommand()
+                MoveCommand_Pin.GetCommand(),
+                DisplayCommand_Pin.GetCommand()
             };
 
             return command;

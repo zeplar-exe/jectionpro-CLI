@@ -104,6 +104,9 @@
       <Compile Update="InterfaceClasses\CloseCommand-Pin.cs">
         <DependentUpon>PinCommand.cs</DependentUpon>
       </Compile>
+      <Compile Update="InterfaceClasses\DisplayCommand-Pin.cs">
+        <DependentUpon>PinCommand.cs</DependentUpon>
+      </Compile>
     </ItemGroup>
 
 </Project>

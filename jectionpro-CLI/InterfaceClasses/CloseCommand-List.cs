@@ -1,6 +1,7 @@
 using System;
 using System.CommandLine;
 using System.CommandLine.Invocation;
+using jectionpro_CLI.Classes;
 using jectionpro_CLI.ResourceFiles;
 
 namespace jectionpro_CLI.InterfaceClasses
@@ -18,10 +19,13 @@ namespace jectionpro_CLI.InterfaceClasses
 
         private static void Handler()
         {
+            var currentProject = ProjectCommand.GetCurrentProject();
+            
             if (ListCommand.OpenList != null)
             {
                 Console.WriteLine(OtherMessagesResources.ListClosed, ListCommand.OpenList.Name);
                 ListCommand.OpenList = null;
+                Project.Save(currentProject.ToXml());
             }
         }
     }

@@ -60,12 +60,23 @@ namespace jectionpro_CLI.Classes
 
         public List<Pin> GetPinsByName(string name)
         {
-            return this.Where(pin => pin.Name == name).ToList();
+            return this.Where(pin =>
+            {
+                if (pin != null)
+                    return pin.Name == name;
+
+                return false;
+            }).ToList();
         }
 
         public Pin GetPinById(int id)
         {
-            return this.DefaultIfEmpty(null).First(pin => pin.Id == id);
+            return this.DefaultIfEmpty(null).FirstOrDefault(pin =>
+            {
+                if (pin != null) return pin.Id == id;
+
+                return false;
+            });
         }
     }
 }

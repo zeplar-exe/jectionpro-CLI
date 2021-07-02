@@ -23,6 +23,7 @@ namespace jectionpro_CLI.InterfaceClasses
 
         private static void Handler(int id)
         {
+            var currentProject = ProjectCommand.GetCurrentProject();
             var list = ProjectCommand.GetCurrentProject().GetPinListById(id);
 
             if (list is null)
@@ -33,7 +34,7 @@ namespace jectionpro_CLI.InterfaceClasses
             
             Console.WriteLine(OtherMessagesResources.ListOpened, list.Name);
             ListCommand.OpenList = list;
-            // TODO: Make this persistent
+            Project.Save(currentProject.ToXml());
         }
     }
 }

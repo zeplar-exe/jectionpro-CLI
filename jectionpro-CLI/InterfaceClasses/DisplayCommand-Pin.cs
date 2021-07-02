@@ -1,17 +1,16 @@
 using System;
 using System.CommandLine;
 using System.CommandLine.Invocation;
-using System.IO;
 using System.Text;
 using jectionpro_CLI.ResourceFiles;
 
 namespace jectionpro_CLI.InterfaceClasses
 {
-    public static class DisplayCommand_List
+    public class DisplayCommand_Pin
     {
         public static Command GetCommand()
         {
-            var command = new Command("display", "Lists all pin lists in the current directory.");
+            var command = new Command("display", "Lists all pins in the currently opened pin list.");
 
             command.Handler = CommandHandler.Create(Handler);
             
@@ -28,12 +27,10 @@ namespace jectionpro_CLI.InterfaceClasses
             
             var outputList = new StringBuilder();
             
-            outputList.AppendLine("Pin lists in current project:");
+            outputList.AppendLine("Pins in current pin list:");
             outputList.AppendLine();
             
-            var currentProject = ProjectCommand.GetCurrentProject();
-
-            currentProject.ForEach(list => outputList.AppendLine(list.Name + $" (ID: {list.Id})"));
+            ListCommand.OpenList.ForEach(pin => outputList.AppendLine(pin.Name + $" (ID: {pin.Id})"));
 
             Console.WriteLine(outputList.ToString());
         }

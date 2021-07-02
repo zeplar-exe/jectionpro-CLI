@@ -21,16 +21,14 @@ namespace jectionpro_CLI.InterfaceClasses
         private static void Handler()
         {
             var currentProject = ProjectCommand.GetCurrentProject();
-
-            PinList list = ListCommand.OpenList;
-
-            if (list == null)
+            
+            if (ListCommand.OpenList == null)
             {
                 Console.WriteLine(ParsingErrorResources.ExpectedOpened, "list");
                 return;
             }
 
-            currentProject.Remove(list);
+            currentProject.Remove(ListCommand.OpenList);
             ListCommand.OpenList = null;
             Project.Save(currentProject.ToXml());
         }
