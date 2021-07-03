@@ -19,6 +19,7 @@ namespace jectionpro_CLI.InterfaceClasses
 
         private static void Handler()
         {
+            ProjectCommand.GetCurrentProject();
             ListCommand.VerifyOpenList();
             
             var outputList = new StringBuilder();
