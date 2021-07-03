@@ -67,9 +67,39 @@ namespace jectionpro_CLI.InterfaceClasses
                 
                 if (key.Key == ConsoleKey.Enter)
                 {
-                    input += key.KeyChar.ToString();
+                    input += Environment.NewLine;
                     Console.WriteLine();
                     currentLine++;
+                }
+                else if (key.Key == ConsoleKey.UpArrow)
+                {
+                    if (currentLine == 0)
+                        continue;
+                    
+                    Console.SetCursorPosition(Console.CursorLeft, Console.CursorTop - 1);
+                    currentLine--;
+                }
+                else if (key.Key == ConsoleKey.DownArrow)
+                {
+                    if (currentLine == lines.Length - 1)
+                        continue;
+                    
+                    Console.SetCursorPosition(Console.CursorLeft, Console.CursorTop + 1);
+                    currentLine++;
+                }
+                else if (key.Key == ConsoleKey.LeftArrow)
+                {
+                    if (Console.CursorLeft == 0)
+                        continue;
+                    
+                    Console.SetCursorPosition(Console.CursorLeft - 1, Console.CursorTop);
+                }
+                else if (key.Key == ConsoleKey.RightArrow)
+                {
+                    if (Console.CursorLeft == lines[currentLine].Length - 1)
+                        continue;
+                    
+                    Console.SetCursorPosition(Console.CursorLeft + 1, Console.CursorTop);
                 }
                 else if (key.Key == ConsoleKey.Backspace)
                 {
@@ -77,10 +107,10 @@ namespace jectionpro_CLI.InterfaceClasses
                     {
                         if (currentLine == 0)
                             continue;
-
+                        
                         Console.SetCursorPosition(lines[--currentLine].Length,Console.CursorTop - 1);
                         Console.Write(" ");
-                        continue; //suppress
+                        continue;
                     }
 
                     //Put the cursor on character back
@@ -103,7 +133,7 @@ namespace jectionpro_CLI.InterfaceClasses
                     Console.Write(key.KeyChar);
                 } //else it must be another control code (ESC etc) or something.
 
-                lines = input.Split("\n");
+                lines = input.Split(Environment.NewLine);
             }
 
             return input;
