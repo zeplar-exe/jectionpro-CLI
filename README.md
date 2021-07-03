@@ -43,6 +43,11 @@ To display the pins inside of an opened pin list, use `jp pin display`.
 Like the pin list, pins can be opened and closed via `jp pin open <id>` and `jp pin close`. If no pin list is opened, the operation will fail.
 
 
+### Read pin data
+
+Using the command 'jp pin read', the currently opened pin's description and text content will be displayed to the screen.
+
+
 ### Edit a pin
 
 After opening a pin, its text contents can be edited using `jp pin edit`.
@@ -50,3 +55,12 @@ After opening a pin, its text contents can be edited using `jp pin edit`.
 This starts a text editing process inside of the terminal. It currently supports newlines, letters, punctuation, symbols, backspaces, and arrow key movement.
 
 To exit the editor and save your changes, press escape (or ctrl + enter).
+
+
+### Pin Descriptions
+
+Changing a pin's description functions the same way as editing its content.
+
+Using the command 'jp pin desc' an identical text editor will appear.
+
+A pin description is included in 'jp pin read'
