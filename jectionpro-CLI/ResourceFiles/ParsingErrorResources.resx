@@ -37,7 +37,7 @@
         <value>The project you are trying to open does not have a valid proj.xml file.</value>
     </data>
     <data name="NoProjectFound" xml:space="preserve">
-        <value>This directory does not contain a project.</value>
+        <value>This directory does not contain a project. Create one using 'jp project init [name]' to access commands.</value>
     </data>
     <data name="InvalidListId" xml:space="preserve">
         <value>No list with the id {0} exists.</value>

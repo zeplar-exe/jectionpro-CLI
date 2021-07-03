@@ -142,7 +142,7 @@ namespace jectionpro_CLI.ResourceFiles {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to This directory does not contain a project..
+        ///   Looks up a localized string similar to This directory does not contain a project. Create one using &apos;jp project init [name]&apos; to access commands..
         /// </summary>
         internal static string NoProjectFound {
             get {
