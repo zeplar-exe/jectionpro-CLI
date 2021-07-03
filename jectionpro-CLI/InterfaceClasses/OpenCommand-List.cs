@@ -34,7 +34,7 @@ namespace jectionpro_CLI.InterfaceClasses
             
             Console.WriteLine(OtherMessagesResources.ListOpened, list.Name);
             ListCommand.OpenList = list;
-            Project.Save(currentProject.ToXml());
+            ProjectCommand.Save(currentProject.ToXml());
         }
     }
 }

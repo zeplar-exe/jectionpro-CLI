@@ -26,7 +26,7 @@ namespace jectionpro_CLI.InterfaceClasses
             var currentProject = ProjectCommand.GetCurrentProject();
             
             currentProject.Add(new PinList(name));
-            Project.Save(currentProject.ToXml());
+            ProjectCommand.Save(currentProject.ToXml());
         }
     }
 }

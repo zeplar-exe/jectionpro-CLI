@@ -37,7 +37,7 @@ namespace jectionpro_CLI.InterfaceClasses
             currentProject.GetPinListById(ListCommand.OpenList.Id)?.Remove(PinCommand.OpenPin.Id);
             ListCommand.OpenList.Remove(PinCommand.OpenPin);
             PinCommand.OpenPin = null;
-            Project.Save(currentProject.ToXml());
+            ProjectCommand.Save(currentProject.ToXml());
         }
     }
 }

@@ -63,5 +63,10 @@ namespace jectionpro_CLI.InterfaceClasses
             
             return ProjectCL.FromXml(xmlDoc.Root);
         }
+
+        public static void Save(XElement xml)
+        {
+            xml.Save(File.CreateText(Path.Join(Directory.GetCurrentDirectory(), ProjectDirectoryName, ProjectDataFileName)));
+        }
     }
 }

@@ -39,7 +39,7 @@ namespace jectionpro_CLI.InterfaceClasses
 
             PinCommand.OpenPin.TextContent = ReadDynamicInput(text);
             
-            Project.Save(currentProject.ToXml());
+            ProjectCommand.Save(currentProject.ToXml());
         }
 
         private static string ReadDynamicInput(string input)
@@ -54,6 +54,12 @@ namespace jectionpro_CLI.InterfaceClasses
                 var key = Console.ReadKey(true);
                 
                 if (key.Key == ConsoleKey.Enter && key.Modifiers.HasFlag(ConsoleModifiers.Control))
+                {
+                    Console.WriteLine();
+                    break;
+                }
+                
+                if (key.Key == ConsoleKey.Escape)
                 {
                     Console.WriteLine();
                     break;

@@ -30,7 +30,7 @@ namespace jectionpro_CLI.InterfaceClasses
 
             currentProject.Remove(ListCommand.OpenList);
             ListCommand.OpenList = null;
-            Project.Save(currentProject.ToXml());
+            ProjectCommand.Save(currentProject.ToXml());
         }
     }
 }

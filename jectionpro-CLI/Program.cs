@@ -14,14 +14,18 @@ namespace jectionpro_CLI
     {
         public static int Main(string[] args)
         {
-            if (ProjectCommand.GetCurrentProject() == null)
-            {
-                return 1;
-            }
-            
             RootCommand root = new RootCommandBuilder();
 
-            return root.InvokeAsync(args).Result;
+            try
+            {
+                return root.InvokeAsync(args).Result;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+
+            return 1;
         }
     }
 }

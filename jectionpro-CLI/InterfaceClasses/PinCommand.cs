@@ -1,5 +1,8 @@
+using System;
 using System.CommandLine;
+using System.CommandLine.Invocation;
 using jectionpro_CLI.Classes;
+using jectionpro_CLI.ResourceFiles;
 
 namespace jectionpro_CLI.InterfaceClasses
 {
@@ -19,8 +22,18 @@ namespace jectionpro_CLI.InterfaceClasses
                 MoveCommand_Pin.GetCommand(),
                 DisplayCommand_Pin.GetCommand()
             };
+            
+            command.Handler = CommandHandler.Create(Handler);
 
             return command;
+        }
+
+        private static void Handler()
+        {
+            if (ProjectCommand.GetCurrentProject() == null)
+            {
+                throw new Exception(ParsingErrorResources.NoProjectFound);
+            }
         }
     }
 }

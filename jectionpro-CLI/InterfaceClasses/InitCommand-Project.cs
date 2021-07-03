@@ -46,7 +46,7 @@ namespace jectionpro_CLI.InterfaceClasses
             var newDirectory = Directory.CreateDirectory(projectDirectory);
             newDirectory.Attributes = FileAttributes.Directory | FileAttributes.Hidden;
             
-            ProjectCL.Save(new ProjectCL(name).ToXml());
+            ProjectCommand.Save(new ProjectCL(name).ToXml());
 
             Console.WriteLine(ParsingSuccessResources.SuccessfullyCreatedProject, name);
         }

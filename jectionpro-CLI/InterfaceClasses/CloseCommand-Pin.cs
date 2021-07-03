@@ -21,7 +21,7 @@ namespace jectionpro_CLI.InterfaceClasses
             
             PinCommand.OpenPin = null;
             
-            Project.Save(currentProject.ToXml());
+            ProjectCommand.Save(currentProject.ToXml());
         }
     }
 }

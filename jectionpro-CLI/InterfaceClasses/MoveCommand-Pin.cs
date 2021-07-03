@@ -61,7 +61,7 @@ namespace jectionpro_CLI.InterfaceClasses
             oldParentE.Remove(PinCommand.OpenPin);
             Console.WriteLine(OtherMessagesResources.PinMoved, PinCommand.OpenPin.Name, newList.Name);
             
-            Project.Save(currentProject.ToXml());
+            ProjectCommand.Save(currentProject.ToXml());
             
             // TODO: Make this less bloated
         }

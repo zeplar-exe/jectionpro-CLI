@@ -32,7 +32,7 @@ namespace jectionpro_CLI.InterfaceClasses
             }
             
             ListCommand.OpenList.Add(new Pin(name));
-            Project.Save(currentProject.ToXml());
+            ProjectCommand.Save(currentProject.ToXml());
         }
     }
 }

@@ -44,11 +44,6 @@ namespace jectionpro_CLI.Classes
             });
         }
 
-        public static void Save(XElement xml)
-        {
-            xml.Save(File.CreateText(Path.Join(Directory.GetCurrentDirectory(), ProjectCommand.ProjectDirectoryName, ProjectCommand.ProjectDataFileName)));
-        }
-
         public XElement ToXml()
         {
             var xml = new XElement("root");

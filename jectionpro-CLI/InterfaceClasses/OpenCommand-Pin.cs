@@ -39,7 +39,7 @@ namespace jectionpro_CLI.InterfaceClasses
             }
             
             Console.WriteLine(OtherMessagesResources.OpenedPin, PinCommand.OpenPin.Name);
-            Project.Save(currentProject.ToXml());
+            ProjectCommand.Save(currentProject.ToXml());
         }
     }
 }

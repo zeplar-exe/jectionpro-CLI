@@ -20,12 +20,6 @@ namespace jectionpro_CLI.InterfaceClasses
 
         private static void Handler()
         {
-            if (ListCommand.OpenList is null)
-            {
-                Console.WriteLine(ParsingErrorResources.ExpectedOpened, "list");
-                return;
-            }
-            
             var outputList = new StringBuilder();
             
             outputList.AppendLine("Pin lists in current project:");
