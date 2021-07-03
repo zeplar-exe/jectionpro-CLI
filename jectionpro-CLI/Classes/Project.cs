@@ -74,7 +74,7 @@ namespace jectionpro_CLI.Classes
 
             if (ListCommand.OpenList != null)
             {
-                PinCommand.OpenPin = ListCommand.OpenList.GetPinById(Convert.ToInt32(xml.Element("openList")?.Value));   
+                PinCommand.OpenPin = ListCommand.OpenList.GetPinById(Convert.ToInt32(xml.Element("openPin")?.Value));   
             }
 
             return project;

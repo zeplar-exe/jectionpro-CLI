@@ -6,7 +6,7 @@ using System.Threading;
 using System.Xml;
 using System.Xml.Linq;
 using jectionpro_CLI.ResourceFiles;
-using ProjectCL = jectionpro_CLI.Classes.Project;
+using jectionpro_CLI.Classes;
 
 namespace jectionpro_CLI.InterfaceClasses
 {
@@ -34,12 +34,12 @@ namespace jectionpro_CLI.InterfaceClasses
             }
         }
 
-        public static ProjectCL GetCurrentProject()
+        public static Project GetCurrentProject()
         {
             return GetProjectInDirectory(Directory.GetCurrentDirectory());
         }
 
-        public static ProjectCL GetProjectInDirectory(string path)
+        public static Project GetProjectInDirectory(string path)
         {
             if (!Directory.Exists(path))
             {
@@ -70,7 +70,7 @@ namespace jectionpro_CLI.InterfaceClasses
                 return null;
             }
             
-            return ProjectCL.FromXml(xmlDoc.Root);
+            return Project.FromXml(xmlDoc.Root);
         }
 
         public static void Save(XElement xml)

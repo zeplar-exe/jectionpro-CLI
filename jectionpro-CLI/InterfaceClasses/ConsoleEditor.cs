@@ -8,10 +8,14 @@ namespace jectionpro_CLI.InterfaceClasses
     {
         public static string ReadDynamicInput(string input)
         {
+            input = input.Replace("\n", Environment.NewLine);
+            
             Console.Write(input);
+            var lines = input.Split(Environment.NewLine).ToList();
+            var currentLine = lines.Count - 1;
 
-            var lines = input.Split("\n");
-            var currentLine = 0;
+            if (currentLine == -1)
+                currentLine = 0;
 
             while (true)
             {
@@ -31,25 +35,28 @@ namespace jectionpro_CLI.InterfaceClasses
 
                 if (key.Key == ConsoleKey.Enter)
                 {
-                    input += Environment.NewLine;
+                    lines[currentLine] += Environment.NewLine;
+                    lines.Insert(++currentLine, "");
                     Console.WriteLine();
-                    currentLine++;
                 }
                 else if (key.Key == ConsoleKey.UpArrow)
                 {
                     if (currentLine == 0)
                         continue;
 
-                    Console.SetCursorPosition(Console.CursorLeft, Console.CursorTop - 1);
-                    currentLine--;
+                    int leftPosition = Console.CursorLeft;
+
+                    if (leftPosition > lines[--currentLine].Length)
+                        leftPosition = lines[currentLine].Length;
+                    
+                    Console.SetCursorPosition(leftPosition, Console.CursorTop - 1);
                 }
                 else if (key.Key == ConsoleKey.DownArrow)
                 {
-                    if (currentLine == lines.Length - 1)
+                    if (currentLine++ == lines.Count - 1)
                         continue;
 
                     Console.SetCursorPosition(Console.CursorLeft, Console.CursorTop + 1);
-                    currentLine++;
                 }
                 else if (key.Key == ConsoleKey.LeftArrow)
                 {
@@ -60,7 +67,7 @@ namespace jectionpro_CLI.InterfaceClasses
                 }
                 else if (key.Key == ConsoleKey.RightArrow)
                 {
-                    if (Console.CursorLeft == lines[currentLine].Length - 1)
+                    if (Console.CursorLeft == lines[currentLine].Length)
                         continue;
 
                     Console.SetCursorPosition(Console.CursorLeft + 1, Console.CursorTop);
@@ -71,9 +78,20 @@ namespace jectionpro_CLI.InterfaceClasses
                     {
                         if (currentLine == 0)
                             continue;
+                        
+                        int leftPosition = Console.CursorLeft;
+
+                        if (leftPosition > lines[--currentLine].Length)
+                            leftPosition = lines[currentLine].Length;
+                    
+                        Console.SetCursorPosition(leftPosition, Console.CursorTop - 1);
+                        
+                        continue; // TODO: Fix error on newline deletion
 
                         Console.SetCursorPosition(lines[--currentLine].Length, Console.CursorTop - 1);
                         Console.Write(" ");
+                        lines.RemoveAt(currentLine);
+                        
                         continue;
                     }
 
@@ -84,7 +102,7 @@ namespace jectionpro_CLI.InterfaceClasses
                     //Put it back again
                     Console.SetCursorPosition(Console.CursorLeft - 1, Console.CursorTop);
                     //Delete the last char of the input
-                    input = string.Join("", input.Take(input.Length - 1));
+                    lines[currentLine] = lines[currentLine].Remove(lines[currentLine].Length - 1, 1);
                 }
                 //Regular key? add it to the input
                 else if (
@@ -93,12 +111,12 @@ namespace jectionpro_CLI.InterfaceClasses
                     char.IsWhiteSpace(key.KeyChar) ||
                     char.IsPunctuation(key.KeyChar))
                 {
-                    input += key.KeyChar.ToString();
+                    lines[currentLine] += key.KeyChar.ToString();
                     Console.Write(key.KeyChar);
                 } //else it must be another control code (ESC etc) or something.
-
-                lines = input.Split(Environment.NewLine);
             }
+
+            input = string.Join("", lines).Replace(Environment.NewLine, "\n");
 
             return input;
         }
