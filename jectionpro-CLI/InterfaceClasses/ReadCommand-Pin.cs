@@ -20,7 +20,7 @@ namespace jectionpro_CLI.InterfaceClasses
             ProjectCommand.GetCurrentProject();
             PinCommand.VerifyOpenPin();
             
-            Console.WriteLine(PinCommand.OpenPin.TextContent);
+            Console.WriteLine(PinCommand.OpenPin.Description + "\n\n" + PinCommand.OpenPin.TextContent);
         }
     }
 }

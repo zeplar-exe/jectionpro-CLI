@@ -98,6 +98,9 @@
       <Compile Update="InterfaceClasses\ReadCommand-Pin.cs">
         <DependentUpon>PinCommand.cs</DependentUpon>
       </Compile>
+      <Compile Update="InterfaceClasses\DescCommand-Pin.cs">
+        <DependentUpon>PinCommand.cs</DependentUpon>
+      </Compile>
     </ItemGroup>
 
 </Project>

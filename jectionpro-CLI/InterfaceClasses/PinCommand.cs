@@ -21,7 +21,8 @@ namespace jectionpro_CLI.InterfaceClasses
                 CloseCommand_Pin.GetCommand(),
                 MoveCommand_Pin.GetCommand(),
                 DisplayCommand_Pin.GetCommand(),
-                ReadCommand_Pin.GetCommand()
+                ReadCommand_Pin.GetCommand(),
+                DescCommand_Pin.GetCommand()
             };
             
             command.Handler = CommandHandler.Create(Handler);
