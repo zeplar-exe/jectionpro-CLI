@@ -19,11 +19,7 @@ namespace jectionpro_CLI.InterfaceClasses
 
         private static void Handler()
         {
-            if (ListCommand.OpenList is null)
-            {
-                Console.WriteLine(ParsingErrorResources.ExpectedOpened, "list");
-                return;
-            }
+            ListCommand.VerifyOpenList();
             
             var outputList = new StringBuilder();
             

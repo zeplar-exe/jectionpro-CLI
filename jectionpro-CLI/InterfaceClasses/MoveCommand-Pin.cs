@@ -24,17 +24,8 @@ namespace jectionpro_CLI.InterfaceClasses
         {
             var currentProject = ProjectCommand.GetCurrentProject();
             
-            if (ListCommand.OpenList == null)
-            {
-                Console.WriteLine(ParsingErrorResources.ExpectedOpened, "list");
-                return;
-            }
-
-            if (PinCommand.OpenPin == null)
-            {
-                Console.WriteLine(ParsingErrorResources.ExpectedOpened, "pin");
-                return;
-            }
+            ListCommand.VerifyOpenList();
+            PinCommand.VerifyOpenPin();
 
             if (id == -1)
             {

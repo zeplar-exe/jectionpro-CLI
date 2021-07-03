@@ -33,5 +33,14 @@ namespace jectionpro_CLI.InterfaceClasses
                 throw new Exception(ParsingErrorResources.NoProjectFound);
             }
         }
+        
+        public static void VerifyOpenList()
+        {
+            if (OpenList == null)
+            {
+                Console.WriteLine(ParsingErrorResources.ExpectedOpened, "list");
+                Environment.Exit(1);
+            }
+        }
     }
 }

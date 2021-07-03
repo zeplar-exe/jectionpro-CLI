@@ -29,11 +29,7 @@ namespace jectionpro_CLI.InterfaceClasses
         {
             var currentProject = ProjectCommand.GetCurrentProject();
 
-            if (PinCommand.OpenPin == null)
-            {
-                Console.WriteLine(ParsingErrorResources.ExpectedOpened, "pin");
-                return;
-            }
+            PinCommand.VerifyOpenPin();
 
             var text = PinCommand.OpenPin.TextContent;
 

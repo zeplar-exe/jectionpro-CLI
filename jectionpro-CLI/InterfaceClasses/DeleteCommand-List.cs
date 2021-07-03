@@ -22,11 +22,7 @@ namespace jectionpro_CLI.InterfaceClasses
         {
             var currentProject = ProjectCommand.GetCurrentProject();
             
-            if (ListCommand.OpenList == null)
-            {
-                Console.WriteLine(ParsingErrorResources.ExpectedOpened, "list");
-                return;
-            }
+            ListCommand.VerifyOpenList();
 
             currentProject.Remove(ListCommand.OpenList);
             ListCommand.OpenList = null;

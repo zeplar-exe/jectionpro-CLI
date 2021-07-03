@@ -6,7 +6,7 @@ using jectionpro_CLI.ResourceFiles;
 
 namespace jectionpro_CLI.InterfaceClasses
 {
-    public class PinCommand
+    public static class PinCommand
     {
         internal static Pin OpenPin;
         
@@ -20,7 +20,8 @@ namespace jectionpro_CLI.InterfaceClasses
                 OpenCommand_Pin.GetCommand(),
                 CloseCommand_Pin.GetCommand(),
                 MoveCommand_Pin.GetCommand(),
-                DisplayCommand_Pin.GetCommand()
+                DisplayCommand_Pin.GetCommand(),
+                ReadCommand_Pin.GetCommand()
             };
             
             command.Handler = CommandHandler.Create(Handler);
@@ -30,9 +31,15 @@ namespace jectionpro_CLI.InterfaceClasses
 
         private static void Handler()
         {
-            if (ProjectCommand.GetCurrentProject() == null)
+            ProjectCommand.VerifyCurrentProject();
+        }
+
+        public static void VerifyOpenPin()
+        {
+            if (OpenPin == null)
             {
-                throw new Exception(ParsingErrorResources.NoProjectFound);
+                Console.WriteLine(ParsingErrorResources.ExpectedOpened, "pin");
+                Environment.Exit(1);
             }
         }
     }

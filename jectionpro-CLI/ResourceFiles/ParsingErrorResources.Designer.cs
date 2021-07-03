@@ -151,6 +151,15 @@ namespace jectionpro_CLI.ResourceFiles {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The currently opened pin should belong to the currently opened list..
+        /// </summary>
+        internal static string Pin_ListMismatch {
+            get {
+                return ResourceManager.GetString("Pin&ListMismatch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to A project already exists in this directory. Use -f|--force if you would like to overwrite it..
         /// </summary>
         internal static string ProjectExistsError {

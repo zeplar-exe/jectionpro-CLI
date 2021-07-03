@@ -51,4 +51,7 @@
     <data name="ExpectedOpened" xml:space="preserve">
         <value>Expected an open {0}.</value>
     </data>
+    <data name="Pin&amp;ListMismatch" xml:space="preserve">
+        <value>The currently opened pin should belong to the currently opened list.</value>
+    </data>
 </root>

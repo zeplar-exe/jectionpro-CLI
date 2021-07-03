@@ -25,6 +25,15 @@ namespace jectionpro_CLI.InterfaceClasses
             return command;
         }
 
+        public static void VerifyCurrentProject()
+        {
+            if (GetCurrentProject() == null)
+            {
+                Console.WriteLine(ParsingErrorResources.NoProjectFound);
+                Environment.Exit(1);
+            }
+        }
+
         public static ProjectCL GetCurrentProject()
         {
             return GetProjectInDirectory(Directory.GetCurrentDirectory());
