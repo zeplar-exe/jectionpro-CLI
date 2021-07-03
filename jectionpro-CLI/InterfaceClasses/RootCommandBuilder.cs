@@ -7,7 +7,7 @@ namespace jectionpro_CLI.InterfaceClasses
 {
     public class RootCommandBuilder : RootCommand
     {
-        private const string Version = "1.1.2";
+        private const string Version = "1.1.3";
         
         public RootCommandBuilder()
         {
