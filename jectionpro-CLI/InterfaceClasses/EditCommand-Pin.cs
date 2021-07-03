@@ -8,24 +8,18 @@ using jectionpro_CLI.ResourceFiles;
 
 namespace jectionpro_CLI.InterfaceClasses
 {
-    public class EditCommand_Pin
+    public static class EditCommand_Pin
     {
-        [DllImport("User32.Dll", EntryPoint = "PostMessageA")]
-        private static extern bool PostMessage(IntPtr hWnd, uint msg, int wParam, int lParam);
-        
-        const int VkReturn = 0x0D;
-        const int WmKeydown = 0x100;
-        
         public static Command GetCommand()
         {
             var command = new Command("edit", "Edit an existing pin. [not implemented]");
             
-            command.Handler = CommandHandler.Create<int>(Handler);
+            command.Handler = CommandHandler.Create(Handler);
             
             return command;
         }
 
-        public static void Handler(int id)
+        private static void Handler()
         {
             var currentProject = ProjectCommand.GetCurrentProject();
 

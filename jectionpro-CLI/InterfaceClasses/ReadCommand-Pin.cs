@@ -1,7 +1,6 @@
 using System;
 using System.CommandLine;
 using System.CommandLine.Invocation;
-using jectionpro_CLI.ResourceFiles;
 
 namespace jectionpro_CLI.InterfaceClasses
 {
@@ -18,6 +17,7 @@ namespace jectionpro_CLI.InterfaceClasses
 
         private static void Handler()
         {
+            ProjectCommand.GetCurrentProject();
             PinCommand.VerifyOpenPin();
             
             Console.WriteLine(PinCommand.OpenPin.TextContent);
