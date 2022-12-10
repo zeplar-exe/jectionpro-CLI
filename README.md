@@ -1,4 +1,6 @@
+## This project is discontinued
 # jectionpro-CLI
+
 A command-line interface made to replicate Trello boards. Windows only.
 
 This is NOT a trello API, nor is it related to or affiliated with Trello in any way.
